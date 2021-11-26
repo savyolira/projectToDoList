@@ -1,10 +1,9 @@
 const adicionar = document.getElementById("criar-tarefa");
-const input = document.querySelector("input");
-const lista = document.getElementById("lista-tarefas");
+const lista = document.querySelector("#lista-tarefas");
 const apagaTudo = document.querySelector("#apaga-tudo");
-const itens = document.getElementsByClassName("itensLista");
 
 adicionar.addEventListener("click", function(){
+    const input = document.querySelector("input");
     let item = document.createElement("li");
     item.innerText = input.value;
     item.classList.add("itensLista");
@@ -21,10 +20,14 @@ lista.addEventListener("click", (item)=>{
     item.target.classList.add("selected");
 })
 
-lista.addEventListener("dblclick", (item)=>{
-    item.target.classList.add("completed");
-})
+// lista.addEventListener("dblclick", (item)=>{
+//     if(item.target.classList.contains("completed") === true){
+//         item.target.classList.remove("completed");
+//     }else{
+//         item.target.classList.remove("completed");
+//     }
+// })
 
-apagaTudo.addEventListener("click", function(){
-    lista.parentNode.removeChild(itens);
+apagaTudo.addEventListener("click", ()=>{
+    lista.innerText = '';
 })
