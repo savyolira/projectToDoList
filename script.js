@@ -20,13 +20,13 @@ lista.addEventListener("click", (item)=>{
     item.target.classList.add("selected");
 })
 
-// lista.addEventListener("dblclick", (item)=>{
-//     if(item.target.classList.contains("completed") === true){
-//         item.target.classList.remove("completed");
-//     }else{
-//         item.target.classList.remove("completed");
-//     }
-// })
+lista.addEventListener("dblclick", (item)=>{
+    if(item.target.classList.contains("completed") === false){
+        item.target.classList.add("completed");
+    }else{
+        item.target.classList.remove("completed");
+    }
+})
 
 apagaTudo.addEventListener("click", ()=>{
     lista.innerText = '';
